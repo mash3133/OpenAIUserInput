@@ -18,7 +18,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const details = {courseName, typeOfAssignment, grading,};
+    const details = {courseName, typeOfAssignment, grading};
     const result = await fetch(HTTP, { 
       method: "POST",
       headers: {
@@ -28,13 +28,9 @@ function App() {
     })
 
     const data = await result.json();
-    console.log("Generated Rubric:", data.response); // Debugging
-
-    // Update UI or state with the received rubric
+    console.log("Generated Rubric:", data.result); 
     setResponse(data.response); 
   }
-
-    
 
   return(
     <div>
@@ -92,18 +88,12 @@ function App() {
         </label>
       </form>
       <button onClick={resetValues}>Reset</button>
-
       <button onClick={handleSubmit}>Submit</button>
-
       <div>
         {response}
       </div>
-
-
     </div>
   )
-
-
 }
 
 export default App;

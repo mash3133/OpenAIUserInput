@@ -1,16 +1,13 @@
 import OpenAI from "openai";
 import express from 'express';
 import cors from "cors";
-import dotenv from "dotenv";
-dotenv.config();
-
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 const port = 3000
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, });
+const openai = new OpenAI({apiKey: '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'});
 
 app.post("/chat", async (req, res) => {
     const courseName = req.body.courseName;
