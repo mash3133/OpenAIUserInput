@@ -9,7 +9,6 @@ function App() {
 
   const [response, setResponse] = useState("");
   const HTTP = "http://localhost:3000/chat";
-  const apiKey = "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";
 
   const resetValues = () => {
     setCourseName("");
@@ -27,6 +26,12 @@ function App() {
       },
       body: JSON.stringify(details),
     })
+
+    const data = await result.json();
+    console.log("Generated Rubric:", data.response); // Debugging
+
+    // Update UI or state with the received rubric
+    setResponse(data.response); 
   }
 
     
