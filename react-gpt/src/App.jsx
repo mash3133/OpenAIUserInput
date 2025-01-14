@@ -1,4 +1,3 @@
-
 import './App.css'
 import React, {useState} from 'react';
 
@@ -7,13 +6,30 @@ function App() {
   const [typeOfAssignment, setTypeOfAssignment] = useState("");
   const [grading, setGrading] = useState("");
 
+
+  const [response, setResponse] = useState("");
+  const HTTP = "http://localhost:3000/chat";
+  const apiKey = "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";
+
   const resetValues = () => {
     setCourseName("");
     setGrading("");
     setTypeOfAssignment("");
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const details = {courseName, typeOfAssignment, grading,};
+    const result = await fetch(HTTP, { 
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(details),
+    })
+  }
 
+    
 
   return(
     <div>
@@ -71,10 +87,18 @@ function App() {
         </label>
       </form>
       <button onClick={resetValues}>Reset</button>
+
+      <button onClick={handleSubmit}>Submit</button>
+
+      <div>
+        {response}
+      </div>
+
+
     </div>
   )
 
 
 }
 
-export default App
+export default App;
