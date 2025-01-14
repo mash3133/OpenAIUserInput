@@ -38,21 +38,6 @@ app.post("/chat", async (req, res) => {
     console.log(completion.choices[0].message.content.trim());
 });
 
-async function main() {
-    const stream = await openai.chat.completions.create({
-        model: "gpt-4o",
-        messages: [{ 
-            role: "user", 
-            content: "Say this is a test" }],
-        stream: true,
-    });
-    for await (const chunk of stream) {
-        process.stdout.write(chunk.choices[0]?.delta?.content || "");
-    }
-}
-
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
-
-//main();
