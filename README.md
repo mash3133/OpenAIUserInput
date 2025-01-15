@@ -4,3 +4,7 @@ to run:
 cd react-gpt
 node server.js
 npm run dev
+
+
+https://github.com/user-attachments/assets/dbcbaad8-12c4-4914-b32e-9c02766ff4a8
+
