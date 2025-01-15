@@ -2,9 +2,9 @@ import './App.css'
 import React, {useState} from 'react';
 
 function App() {
-  const [courseName, setCourseName] = useState("Computer Science");
-  const [typeOfAssignment, setTypeOfAssignment] = useState("Essay");
-  const [grading, setGrading] = useState("Clarity");
+  const [courseName, setCourseName] = useState("");
+  const [typeOfAssignment, setTypeOfAssignment] = useState("");
+  const [grading, setGrading] = useState("");
   /*Have an array to store categories dynamically*/
   const [gradingCategories, setGradingCategories] = useState([
     "Clarity",
