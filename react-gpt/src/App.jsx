@@ -44,7 +44,7 @@ function App() {
       setCurrentOutput(data.response); // Update the current output
     }
   }
-
+ 
   return(<>
     <div className="app-container">
       <p className='title'>AI-supported grading rubric generator</p>
